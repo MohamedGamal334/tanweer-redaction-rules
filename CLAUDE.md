@@ -9,9 +9,10 @@ OCR scanned Arabic archive pages, detect personal data, redact, audit.
 ## Never read, print or send
 - `.env`, keys, tokens, `*.pem`.
 - Real client documents. Only `data/synthetic/` exists for us.
-- Never send page images or text to any hosted API unless the task says
-  so; Tanweer's policy forbids personal data leaving its control.
+- Hosted APIs (free-tier OCR or LLM): `data/synthetic/` only. Never send real
+  page images or text; Tanweer's policy forbids personal data leaving its control.
 - Never log extracted text or ID numbers. Log document ID and page number only.
+- Errors and exceptions must not contain extracted text or IDs either.
 
 ## Conventions that differ from defaults
 - Text is Arabic (RTL). Keep Unicode as is. Never strip diacritics or
@@ -47,9 +48,8 @@ OCR scanned Arabic archive pages, detect personal data, redact, audit.
 ## Before saying a task is done
 - `make test` passes and new behaviour has a new test.
 - Fixtures use `data/synthetic/` only. No real names, IDs or phone numbers.
-- Redacted output re-checked: no PII text remains.
 
- ## Security
+## Security
 - Threat model: `docs/threat-model.md`. Update it when a new data flow is added.
 - Before any PR: `make secrets` and `make lint` pass; no new network call.
 - New dependency or model: check `docs/licences.md`; must run on-premise.
