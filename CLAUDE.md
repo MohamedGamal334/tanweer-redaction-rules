@@ -49,7 +49,7 @@ OCR scanned Arabic archive pages, detect personal data, redact, audit.
 - Fixtures use `data/synthetic/` only. No real names, IDs or phone numbers.
 - Redacted output re-checked: no PII text remains.
 
-- ## Security
+ ## Security
 - Threat model: `docs/threat-model.md`. Update it when a new data flow is added.
 - Before any PR: `make secrets` and `make lint` pass; no new network call.
 - New dependency or model: check `docs/licences.md`; must run on-premise.
