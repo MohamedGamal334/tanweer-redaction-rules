@@ -24,6 +24,7 @@ OCR scanned Arabic archive pages, detect personal data, redact, audit.
   black box over it. Test by extracting text from the redacted PDF.
 - Bounding boxes use pixel coordinates of the original scan: `[x0, y0, x1, y1]`.
 - Presidio has no Arabic recognisers. Custom ones live in `src/pii/recognisers/`.
+- `src/text/normalize.py` exposes `normalize_digits(text) -> str`. Call it; never re-implement.
 
 ## Where things are (read when relevant, not up front)
 - Client brief: `docs/brief.md`
